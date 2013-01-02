@@ -24,6 +24,6 @@ require_once("script/facebook-php-sdk-master/src/facebook.php");
 		$user_profile = $facebook-> api('/me', 'GET');
 	}
 	
-	header("Location: http://localhost/php/ma12forum/index.php");
+	header("Location: http://localhost/php/nyttforsok/index.php");
 
 ?>
