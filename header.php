@@ -10,7 +10,7 @@
     	<link rel="stylesheet" href="css/mobilemenu.css" type="text/css">
     </head>
     <body>
-    	<img class="logo" src="pics/logotype.png">
+    	<a href="index.php"><img class="logo" src="pics/logotype.png"></a>
     	<img class="logoM" src="pics/logotype2.png">
     	<div class="wrapper">
 	    	<div class="menu">
