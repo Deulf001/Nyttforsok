@@ -27,10 +27,9 @@ if ($user) {
        error_log($e);
        $user = null;
        }
-         }else{
-       header('Location: index.php');
+         }
 		//om en användare har blivit inloggad med facebook. Lägg till den nya användaren i databasen.
-        }
+        
           $query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'facebook' AND     oauth_uid = ". $user_profile['id']);  
           $result = mysql_fetch_array($query);  
 
