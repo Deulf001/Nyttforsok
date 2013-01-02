@@ -1,0 +1,56 @@
+/************************************************************************************************************************
+***************************************Mobilanpassad hemsida för enheter under 640px****************************************************************************
+************************************************************************************************************************/
+
+@media only screen and (max-width:640px) {
+
+.webbbutt{
+	visibility:hidden;
+}
+
+
+.logo {
+	display: none;
+}
+
+/* LogoM står för logomobil. En logga anpassad för att passa en mobil vy.*/
+.logoM {
+	float: center;
+	display: inline;
+	width: 70%;
+
+}
+
+.wrapper {
+	float: center;  
+    width: 85%;  
+    margin: 2px;             /* center the page */  
+}  
+
+.menu {  
+    float: center;   
+    border-bottom: none;        /* avoid a double border */  
+    height:45px;  
+}
+
+.content {  
+	justify: auto;
+    float: left;  
+    font-family: Arial;  
+ 
+    text-align: left; 
+    margin: 0px;  
+    width: 100%;                /* fill up the entire div */  
+}  
+
+.leftsidebar {
+	display: none;
+}
+
+ul#navigation {
+	display: block;
+
+}
+
+	
+}

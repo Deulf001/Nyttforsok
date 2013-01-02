@@ -1,0 +1,44 @@
+/* Här är alla inställningar för mobilmenyn som dyker upp när mediaquery
+ * förändrar utseendet vid 640px eller mindre.
+ */
+
+ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	
+}
+ 
+ul#navigation {
+	float:left;
+
+}
+ 
+ul#navigation li {
+	border-radius: 2px;
+    background-color: #00728B;  
+    border: 1px solid #032472;  
+    color: #FFF;  
+    font-family: Arial;
+    padding: 3px;  
+    with: 10px;
+    text-decoration: none;  
+	float:left;
+}
+
+
+ 
+ul.sub_navigation {
+	position:absolute;
+	display:none;
+}
+ 
+ul.sub_navigation li {
+	clear:both;
+}
+ 
+a, li{font-color: #FFF;}
+a:active,
+a:visited {
+	display:block;
+}

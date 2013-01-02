@@ -1,0 +1,163 @@
+.logo {
+  float: left;
+	margin-left: 17%;
+	width: 20%;
+}
+
+.logoM {
+	display: none;
+}
+
+ul#navigation {
+	display: none;
+
+}
+
+body { 
+	
+    background-image: url(../pics/bakgrundsvart.jpg);
+    text-align: center;         /* make sure IE centers the page too */  
+}
+
+#footer{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 600px;
+	color: #8a8383;}
+
+div{border-radius: 10px;}
+
+.wrapper {  
+    width: 80%;  
+    margin: auto;             /* center the page */  
+}  
+.content {  
+    background-color: #fff;  
+    border: 1px solid #000;  
+    float: right;  
+    font-family: Arial;  
+    padding: 20px 30px;  
+    text-align: left; 
+    margin: 5px;  
+    width: 650px;                /* fill up the entire div */  
+}  
+.menu {  
+    float: left;  
+    border: 1px solid #000;  
+    border-bottom: none;        /* avoid a double border */  
+    clear: both;                /* clear:both makes sure the content div doesn't float next to this one but stays under it */  
+    width:100%;  
+    height:20px;  
+    padding: 20px;  
+    background-image: url(../pics/metall.jpg);
+    background-color: #6b8291;  
+    text-align: left;  
+    font-size: 100%;  
+}  
+
+
+
+.menu a:hover {
+    background-color: #009FC1;  
+}  
+.userbar {   
+    width: 250px;  
+}  
+.footer {  
+    clear: both;  
+}  
+/* begin table styles */  
+table {  
+    border-collapse: collapse;  
+    width: 100%;  
+}  
+table a {  
+    color: #000;  
+}  
+table a:hover {  
+    color:#373737;  
+    text-decoration: none;  
+}  
+th {  
+    background-color: #B40E1F;  
+    color: #F0F0F0;  
+}  
+td {  
+    padding: 5px;  
+}  
+/* Begin font styles */  
+h1, .footer {  
+    font-family: Arial;  
+    color: #F1F3F1;  
+}  
+h3 {margin: 0; padding: 0;}  
+/* Menu styles */  
+
+.userbar{
+	float: right;
+}
+
+.item, .itemlog, .sub_navigation, #navigation, ul {  
+	border-radius: 2px;
+    background-color: #00728B;  
+    border: 1px solid #032472;  
+    color: #FFF;  
+    font-family: Arial;  
+    padding: 3px;  
+    text-decoration: none;  
+}
+
+.item{
+	margin: 3px;
+	float: left;
+}
+
+.itemlog{
+	margin: 3px;
+	float: right;
+}
+
+.leftsidebar{
+	float: left;  
+    border: 1px solid #000;  
+    border-bottom: none;        /* avoid a double border */  
+    clear: both;                /* clear:both makes sure the content div doesn't float next to this one but stays under it */  
+    width:25%;  
+    height:600px;  
+    padding: 20px;  
+    background-image: url(../pics/metall.jpg);
+    background-color: #6b8291;  
+    text-align: left;  
+    font-size: 100%;  }
+    
+.twitter-timeline{
+	margin: px;
+	width: 250px;
+}
+
+.leftpart {  
+    width: 70%;  
+}  
+.rightpart {  
+    width: 30%;  
+}  
+.small {  
+    font-size: 75%;  
+    color: #373737;  
+}  
+.footer {  
+    font-size: 65%;  
+    padding: 3px 0 0 0;  
+}  
+.topic-post {  
+    height: 100px;  
+    overflow: auto;  
+}  
+.post-content {  
+    padding: 30px;  
+}  
+textarea {  
+    width: 500px;  
+    height: 200px;  
+} 
+
