@@ -35,7 +35,7 @@ if ($user) {
           $result = mysql_fetch_array($query);  
 
         if(empty($result)){ 
-          $query = mysql_query("INSERT INTO users (email, date, oauth_provider, oauth_uid, user)         VALUES ('{$user_profile['email']}', NOW(), 'facebook', {$user_profile['id']}, '{$user_profile['name']}')");
+          $query = mysql_query("INSERT INTO users (email, date, oauth_provider, oauth_uid, name)         VALUES ('{$user_profile['email']}', NOW(), 'facebook', {$user_profile['id']}, '{$user_profile['name']}')");
           $query = mysql_query("SELECT * FROM users WHERE id = " . mysql_insert_id());  
           $result = mysql_fetch_array($query);  
            }  
