@@ -21,9 +21,10 @@ ul#navigation li {
     color: #FFF;  
     font-family: Arial;
     padding: 3px;  
-    with: 10px;
+
     text-decoration: none;  
 	float:left;
+
 }
 
 
@@ -37,7 +38,7 @@ ul.sub_navigation li {
 	clear:both;
 }
  
-a, li{font-color: #FFF;}
+a, li{color: #FFF;}
 a:active,
 a:visited {
 	display:block;
