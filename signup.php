@@ -17,6 +17,9 @@ session_start();
 		<input type="submit" value="Registrera" />
 		</form>';
 		
+		//echo "<a href='#' onClick=\"window.open('fblogin.php', 'WindowC', 'width=1100, height=700,scrollbars=yes');\"><img src='pics/fbcreateaccount.png'></a>";
+		echo "<a href='fblogin.php'><img src='pics/fbcreateaccount.png' > </a>";
+		
 	}
 	else {
 		$errors = array();

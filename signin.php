@@ -8,32 +8,33 @@ session_start();
     if (isset($_SESSION['signed_in']) && $_SESSION
     ['signed_in'] == TRUE) 
     {
-     echo 'Du �r redan inloggad, du kan <a href=
+     echo 'Du ï¿½r redan inloggad, du kan <a href=
      "signout.php">logga ut</a> om du vill';   
     }
 	else 
 	{
 		if($_SERVER['REQUEST_METHOD'] != 'POST'){
 			echo '<form method="post" action="">
-			Anv�ndarnamn: <input type="text" name="name" />
-			L�senord: <input type="password" name="pass">
+			Anvï¿½ndarnamn: <input type="text" name="name" />
+			Lï¿½senord: <input type="password" name="pass">
 			<input type="submit" value="Logga in" />
 		 </form>';
+		 echo "<a href='fblogin.php'><img src='pics/fblogin.png' > </a>";
 	}
 		else
 		{
 			$errors = array(); 
 		if(!isset($_POST['name']))
 		{
-			$errors[] = 'Fyll i anv�ndarnamnet.';
+			$errors[] = 'Fyll i anvï¿½ndarnamnet.';
 		}
 		if(!isset($_POST['pass']))
 		{
-			$errors[] = 'L�senordet �r inte ifyllt';
+			$errors[] = 'Lï¿½senordet ï¿½r inte ifyllt';
 		}
 		if(!empty($errors)) 
 		{
-			echo 'F�ltet �r inte ifyllda';
+			echo 'Fï¿½ltet ï¿½r inte ifyllda';
 			echo '<ul>';
 			foreach($errors as $key => $value) 
 			{
@@ -43,7 +44,7 @@ session_start();
 		}
 		else
 		{
-			
+
 			$sql = "SELECT
 						id,
 						name,
@@ -59,8 +60,8 @@ session_start();
 			$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($stmt->rowCount() != 1) 
 			{
-					
-				echo 'N�got gick fel n�r du logga in, f�rs�k igen.';
+
+				echo 'Nï¿½got gick fel nï¿½r du logga in, fï¿½rsï¿½k igen.';
 				return null;
 			}
 			else
@@ -69,12 +70,12 @@ session_start();
 				$_SESSION['id'] 	= $row[0]['id'];
 				$_SESSION['name'] 	= $row[0]['name'];
 				$_SESSION['level'] = $row[0]['level'];
-				echo 'V�lkommen, ' . $_SESSION['name'] . '. <a href="index.php">Forts�tt till hemsidan</a>.';
+				echo 'Välkommen, ' . $_SESSION['name'] . '. <a href="index.php">Fortsätt till hemsidan</a>.';
 			}
 		}
 	}
 }
 include 'footer.php';	
-	
+
 
 ?>
