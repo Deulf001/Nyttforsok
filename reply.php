@@ -1,7 +1,7 @@
 <META charset="utf-8">
 <?php
 session_start();
-//reply.php  
+
 include 'connect.php';  
 include 'header.php'; 
   

@@ -1,7 +1,7 @@
 <META charset="utf-8">
 
 <?php  
- 
+session_start();
 include 'connect.php';  
 include 'header.php';  
 $topicid = $_GET['id'];
@@ -44,7 +44,7 @@ $sql = "SELECT
 						posts.user_id = users.id
 					WHERE
 						posts.topic_id =  ?";  
-       		 $stmt = $db->prepare($sql);
+       		$stmt = $db->prepare($sql);
 			$stmt->execute(array($topicid));
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($stmt->rowCount()==0) 
@@ -62,11 +62,12 @@ $sql = "SELECT
 				
             }  
         }
-			echo 
-			  '<form method="post" action="reply.php?id=">
-  			  <textarea rows="6" cols="50" name="reply-content"></textarea>
-   			  <input type="submit" value="Submit reply" />
-			  </form>';
+			
+				echo '<tr><td colspan="2"><h2>Reply:</h2><br />
+					<form method="post" action="reply.php?id=' . $row['topic_id'] . '">
+					<textarea name="reply-content"></textarea><br /><br />
+					<input type="submit" value="Submit reply" />
+					</form></td></tr>';
    
  
 
