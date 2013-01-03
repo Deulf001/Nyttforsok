@@ -11,23 +11,19 @@ ul {
  
 ul#navigation {
 	float:left;
-
 }
  
 ul#navigation li {
-	border-radius: 2px;
+	border-radius: 0px;
     background-color: #00728B;  
-    border: 1px solid #032472;  
+    border: 0px solid #032472;  
     color: #FFF;  
     font-family: Arial;
     padding: 3px;  
-
     text-decoration: none;  
 	float:left;
-
+	font-size: 30px;
 }
-
-
  
 ul.sub_navigation {
 	position:absolute;

@@ -18,19 +18,19 @@
 	float: center;
 	display: inline;
 	width: 70%;
-
 }
 
 .wrapper {
 	float: center;  
     width: 85%;  
-    margin: 2px;             /* center the page */  
+    margin: 2px;             /* centrerar sidan */  
 }  
 
 .menu {  
     float: center;   
-    border-bottom: none;        /* avoid a double border */  
+    border-bottom: none;        /* undvik en dubbel border */  
     height:45px;  
+    font-size: 30px;
 }
 
 .content {  
@@ -40,7 +40,7 @@
  
     text-align: left; 
     margin: 0px;  
-    width: 100%;                /* fill up the entire div */  
+    width: 100%;                /* fyller upp hela div:en */  
 }  
 
 .leftsidebar {
@@ -51,10 +51,16 @@ ul#navigation {
 	display: block;
 
 }
+<<<<<<< HEAD
 
 
 a, li{color: #FFF;
 a:active,
 a:visited {
 	display:block;
+=======
+.userbar {
+	float: left;
+}	
+>>>>>>> css
 }
