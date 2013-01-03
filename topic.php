@@ -44,7 +44,7 @@ $sql = "SELECT
 						posts.user_id = users.id
 					WHERE
 						posts.topic_id =  ?";  
-       		$stmt = $db->prepare($sql);
+       		 $stmt = $db->prepare($sql);
 			$stmt->execute(array($topicid));
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($stmt->rowCount()==0) 
