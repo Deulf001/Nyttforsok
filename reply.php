@@ -5,7 +5,7 @@ session_start();
 include 'connect.php';  
 include 'header.php'; 
   
-if($_SERVER['REQUEST_METHOD'] != 'POST')  
+if($_SERVER['REQUEST_METHOD'] == 'POST')  
 {  
     //someone is calling the file directly, which we don't want  
     echo 'This file cannot be called directly.'; 
