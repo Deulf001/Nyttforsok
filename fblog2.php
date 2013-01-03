@@ -1,4 +1,5 @@
 <?php 
+require_once("script/facebook-php-sdk-master/src/facebook.php");
 
    $app_id = "308386372606160";
    $app_secret = "e3fb9e5197f4b4780ab54180befb51dc";

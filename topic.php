@@ -53,7 +53,7 @@ $sql = "SELECT
             }  
             else  
             {
-					   echo "<a href='reply.php'> Svara på denna diskussion </a>";
+
                foreach($rows AS $row)  
                 {
                     echo '<p>' . $row['content'] . '</p>';   
@@ -61,7 +61,12 @@ $sql = "SELECT
                 }  
 				
             }  
-        }  
+        }
+			echo 
+			  '<form method="post" action="reply.php?id=">
+  			  <textarea rows="6" cols="50" name="reply-content"></textarea>
+   			  <input type="submit" value="Submit reply" />
+			  </form>';
    
  
 

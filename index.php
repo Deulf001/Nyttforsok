@@ -19,7 +19,7 @@ $user = $facebook->getUser();
 // Om man har en användare som har tillåtit appen, fortsätt med detta:
 if ($user) {
   try {
-    $fbuid = $facebook->getUser();
+     $fbuid = $facebook->getUser();
      $user_profile = $facebook->api('/me');
 	 } 
 
@@ -28,24 +28,31 @@ if ($user) {
        $user = null;
        }
          }
+		$fbname = $user_profile['name'];
+		$fbemail = $user_profile['email'];
+		$fbid = $user_profile['id'];
+		
+		
 		//om en användare har blivit inloggad med facebook. Lägg till den nya användaren i databasen.
         
-          $query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'facebook' AND     oauth_uid = ". $user_profile['id']);  
-          $result = mysql_fetch_array($query);  
+         // $query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'facebook' AND oauth_uid = ". $user_profile['id']);  
+          //$result = mysql_fetch_array($query);  
 
-        if(empty($result)){ 
-          $query = mysql_query("INSERT INTO users (email, date, oauth_provider, oauth_uid, name)         VALUES ('{$user_profile['email']}', NOW(), 'facebook', {$user_profile['id']}, '{$user_profile['name']}')");
-          $query = mysql_query("SELECT * FROM users WHERE id = " . mysql_insert_id());  
-          $result = mysql_fetch_array($query);  
+        //if(empty($result)){
+        if($user){
+          //$query = mysql_query("INSERT INTO users (oauth_provider, oauth_uid, username) VALUES    ('facebook', '$user_profile[id]', '$user_profile[name]')");
+          $q = "INSERT INTO users (email, oauth_provider, oauth_uid, name) VALUES ('$fbemail', 'facebook', '$fbid', '$fbname')";
+          echo $q;
+		  $query = mysql_query($q);
+         // $query = mysql_query("SELECT * FROM users WHERE id = " . mysql_insert_id());  
+       //   $result = mysql_fetch_array($query);  
            }  
 
+echo $user;
+echo $fbemail;
+echo $fbname;
+echo $fbid;
 
-
-       // Login or logout url will be needed depending on current user state.
-        if ($user_profile) {
-         $paramsout = array('next'=>'http://www.mywebsite.com/test/logout.php');
-         $logoutUrl = $facebook->getLogoutUrl($paramsout);
-         }
 
 $sql = "SELECT
 			categories.id,
