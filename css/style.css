@@ -14,13 +14,13 @@ ul#navigation {
 }
 
 body { 
-<<<<<<< HEAD
+
     background-image: url(../pics/bakgrundsvart.jpg);
     text-align: center;         /* Centrering för IE */  
-=======
+
 	background-image: url(../pics/bakgrundsvart.jpg);
     text-align: center;          
->>>>>>> css
+
 }
 
 div {
@@ -30,11 +30,8 @@ div {
 .wrapper {  
     width: 80%;  
     margin: auto;             /* center the page */  
-<<<<<<< HEAD
-}
-=======
 }  
->>>>>>> css
+
 
 .content {  
     background-color: #fff;  
@@ -45,9 +42,7 @@ div {
     text-align: left; 
     margin: 5px;  
     width: 650px;                /* fill up the entire div */  
-<<<<<<< HEAD
-}
-=======
+
 }  
 
 .menu {  
@@ -67,7 +62,7 @@ div {
 .menu a:hover {
     background-color: #009FC1;  
 }  
->>>>>>> css
+
 
 .userbar {   
     width: 250px;  
