@@ -28,8 +28,11 @@ if ($user) {
        $user = null;
        }
          }
+<<<<<<< HEAD
 		//om en användare har blivit inloggad med facebook. Lägg till den nya användaren i databasen.
         
+=======
+>>>>>>> css
           $query = mysql_query("SELECT * FROM users WHERE oauth_provider = 'facebook' AND     oauth_uid = ". $user_profile['id']);  
           $result = mysql_fetch_array($query);  
 
