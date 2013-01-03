@@ -5,14 +5,14 @@ session_start();
 	include 'header.php';
 	echo '<h3> Sign up </h3>';
 	
-	/* om formul�ret inte har postats �n, s� visas formul�ret */
+	/* om formuläret inte har postats än, så visas formuläret */
 	
 	if($_SERVER ['REQUEST_METHOD']!= 'POST')
 	{
 		echo '<form method="post" action="">
-		Anv�ndarnamn: <input type="text" name="name" /><br>
-		L�senord: <input type ="password" name="pass" ><br>
-		L�senord igen <input type="password" name="pass_check"><br>
+		Användarnamn: <input type="text" name="name" /><br>
+		Lösenord: <input type ="password" name="pass" ><br>
+		Lösenord igen <input type="password" name="pass_check"><br>
 		E-mail: <input type="email" name ="email"><br>
 		<input type="submit" value="Registrera" />
 		</form>';
@@ -27,31 +27,31 @@ session_start();
 		{
 			if(!ctype_alnum($_POST['name']))
 		{
-			$errors[] = 'Anv�ndarnamnet kan endast ha bokst�ver och siffror.';
+			$errors[] = 'Användarnamnet kan endast ha bokstäver och siffror.';
 		}
 		if(strlen($_POST['name']) > 20 )
 		{
-			$errors[] = 'Anv�ndarnamnet f�r max vara 20 bokst�ver l�ngt.';
+			$errors[] = 'Användarnamnet får max vara 20 bokstöver långt.';
 		}	
 	}
 	else {
-		$errors[] = 'Du har gl�mt fylla i n�t anv�ndarnamn.';
+		$errors[] = 'Du har glömt fylla i något användarnamn.';
 		
 	}
 	if(isset($_POST['pass']))
 	{
 		if($_POST['pass'] != $_POST['pass_check'])
 		{
-			$errors[] = 'L�senorden matchade inte.';
+			$errors[] = 'Lösenorden matchade inte.';
 		}
 	}
 	else
 	{
-		$errors[] = 'L�senordsf�ltet �r tomt.';
+		$errors[] = 'Lösenordsfältet är tomt.';
 	}
 	if(!empty($errors))
 	{
-		echo'N�gra f�lt �r inte korrekt ifylda';
+		echo'Vissa fält är inte korrekt ifylda';
 		echo '<ul>';
 		foreach ($errors as $key => $value) 
 		{
@@ -68,11 +68,11 @@ session_start();
 			
 		if(!$db->lastInsertId('id')) 
 		{
-			echo 'N�got gick fel vid registreringen, f�rs�k igen.';		
+			echo 'Något gick fel vid registreringen, försök igen.';		
 		}
 		else
 		{
-			echo 'Godk�nd registrering. Du kan nu <a href="signin.php">signa in</a> och starta posta! :-)'; 
+			echo 'Godkänd registrering. Du kan nu <a href="signin.php">logga in</a> och börja posta! :-)'; 
         } 
     } 
 } 

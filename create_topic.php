@@ -7,7 +7,7 @@ include 'header.php';
 echo '<h2>Skapa topic</h2>';
 if(!isset($_SESSION['signed_in']))
 {
-	echo 'Du mï¿½ste vara inloggad <a href="signin.php">Logga in</a> fï¿½r att skapa en topic.';
+	echo 'Du mÃ¥ste vara inloggad <a href="signin.php">Logga in</a> fÃ¶r att skapa en topic.';
 }
 else
 {
@@ -29,7 +29,7 @@ else
 				}
 				else
 				{
-					echo 'Innan du postar en topic mï¿½ste admin ha skapat en kategori';
+					echo 'Innan du skapar en topic mÃ¥ste admin ha skapat en kategori';
 				}
 			}
 			else
@@ -64,7 +64,7 @@ else
 				}
 				else
 				{
-					echo 'Nu blev det lite fel med din topic, försök igen';
+					echo 'Nu blev det lite fel med din topic, fÃ¶rsÃ¶k igen';
 				}			
 			
 				/*$sql = "INSERT INTO
@@ -90,7 +90,7 @@ else
 				}
 				else
 				{
-					echo 'Nu blev det lite fel med din topic, försök igen';
+					echo 'Nu blev det lite fel med din topic, fï¿½rsï¿½k igen';
 				}
 				 
 				 */

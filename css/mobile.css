@@ -52,5 +52,9 @@ ul#navigation {
 
 }
 
-	
+
+a, li{color: #FFF;
+a:active,
+a:visited {
+	display:block;
 }

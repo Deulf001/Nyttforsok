@@ -8,15 +8,15 @@ session_start();
     if (isset($_SESSION['signed_in']) && $_SESSION
     ['signed_in'] == TRUE) 
     {
-     echo 'Du ï¿½r redan inloggad, du kan <a href=
+     echo 'Du är redan inloggad, du kan <a href=
      "signout.php">logga ut</a> om du vill';   
     }
 	else 
 	{
 		if($_SERVER['REQUEST_METHOD'] != 'POST'){
 			echo '<form method="post" action="">
-			Anvï¿½ndarnamn: <input type="text" name="name" />
-			Lï¿½senord: <input type="password" name="pass">
+			Användarnamn: <input type="text" name="name" />
+			Lösenord: <input type="password" name="pass">
 			<input type="submit" value="Logga in" />
 		 </form>';
 		 echo "<a href='fblogin.php'><img src='pics/fblogin.png' > </a>";
@@ -26,15 +26,15 @@ session_start();
 			$errors = array(); 
 		if(!isset($_POST['name']))
 		{
-			$errors[] = 'Fyll i anvï¿½ndarnamnet.';
+			$errors[] = 'Fyll i användarnamnet.';
 		}
 		if(!isset($_POST['pass']))
 		{
-			$errors[] = 'Lï¿½senordet ï¿½r inte ifyllt';
+			$errors[] = 'Lösenordet är inte ifyllt';
 		}
 		if(!empty($errors)) 
 		{
-			echo 'Fï¿½ltet ï¿½r inte ifyllda';
+			echo 'Fälten är inte ifyllda';
 			echo '<ul>';
 			foreach($errors as $key => $value) 
 			{
@@ -61,7 +61,7 @@ session_start();
 			if($stmt->rowCount() != 1) 
 			{
 
-				echo 'Nï¿½got gick fel nï¿½r du logga in, fï¿½rsï¿½k igen.';
+				echo 'Något gick fel när du logga in, försök igen.';
 				return null;
 			}
 			else
