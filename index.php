@@ -22,7 +22,7 @@ if ($user) {
     $fbuid = $facebook->getUser();
      $user_profile = $facebook->api('/me');
 	 } 
-	 
+
 	 catch (FacebookApiException $e) {
        error_log($e);
        $user = null;
@@ -77,7 +77,7 @@ $sql = "SELECT
 				<th>Category</th>
 				<th>Last topic</th>
 			  </tr>';	
-			
+
 		foreach($rows AS $row)
 		{				
 			echo '<tr>';
@@ -85,18 +85,18 @@ $sql = "SELECT
 					echo '<h3><a href="category.php?id=' . $row['id'] . '">' . $row['name'] . '</a></h3>' . $row['description'];
 				echo '</td>';
 				echo '<td class="rightpart">';
-				
+
 				//fetch last topic for each cat
 					$topicsql = "SELECT id, subject, date, cat 
 								FROM topics
 								WHERE cat = " . $row['id'] . "
 								ORDER BY date DESC
 								LIMIT 1";			
-								
+
 					$stmt = $db->prepare($topicsql);
 					$stmt->execute(array('cat')); //$_POST
 					$topicrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	
+
 						if($stmt->rowCount() == 0) 
 						{
 							echo 'no topic';
@@ -110,7 +110,7 @@ $sql = "SELECT
 				echo '</td>';
 			echo '</tr>';
 		}
-	
+
 
 include 'footer.php';
 ?>
