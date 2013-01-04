@@ -13,7 +13,7 @@ $sql = "SELECT
     		topics  
 		WHERE  
     		topics.id = ?";  
-			 $stmt = $db->prepare($sql);
+			$stmt = $db->prepare($sql);
 			$stmt->execute(array($topicid));
 			$topicrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($stmt->rowCount()==0)
@@ -44,12 +44,13 @@ $sql = "SELECT
 						posts.user_id = users.id
 					WHERE
 						posts.topic_id =  ?";  
-       		 $stmt = $db->prepare($sql);
+       		$stmt = $db->prepare($sql);
 			$stmt->execute(array($topicid));
 			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($stmt->rowCount()==0) 
 			{
                 echo 'There are no topics in this category yet.';  
+
             }  
             else  
             {
@@ -58,6 +59,8 @@ $sql = "SELECT
                 {
                     echo '<p>' . $row['content'] . '</p>';   
                     echo date('d-m-Y', strtotime($row['date'])); 
+					
+					 
                 }  
 				
             }  
@@ -69,7 +72,7 @@ $sql = "SELECT
 					<input type="submit" value="Submit reply" />
 					</form></td></tr>';
    
- 
+ print_r($row['topic_id']);
 
 
 include 'footer.php';

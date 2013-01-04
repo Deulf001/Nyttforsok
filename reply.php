@@ -4,7 +4,9 @@ session_start();
 
 include 'connect.php';  
 include 'header.php'; 
-  
+$users = $_GET['id'];
+$topics = $_SESSION['id'];
+$content = $_POST['reply-content'];
 if($_SERVER['REQUEST_METHOD'] != 'POST')  
 {  
     //someone is calling the file directly, which we don't want  
@@ -26,13 +28,15 @@ else
                           date,
                           user_id, 
                           topic_id) 
-                VALUES ('" . $_POST['reply-content'] . "', 
+                VALUES (:contentid, 
                         NOW(), 
-                        " . mysql_real_escape_string($_GET['id']) . ", 
-                        " . $_SESSION['id'] . ")"; 
-        $result = mysql_query($sql); 
-        if(!$result) 
-        { 
+                        :user_id,
+                        :topic_id"; 
+       		$stmt = $db->prepare($sql);
+			$stmt->execute(array(':contentid' => $content, ':user_id' => $topics, 'topic_id' => $content));
+			$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($stmt->rowCount() == 1) 
+			{
             echo 'Din kommentar har inte blivit sparad, försök senare.'; 
         } 
         else 
