@@ -90,5 +90,77 @@
 			</script>
 	 	   </div>
 	    
-    	
+    	<div class="Searchbar"
+    	<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+function getSuggestions(value) {
+	if(value != ""){ 
+	$.post("users2.php", {userPart:value}, function(data) {
+		$("#suggestions").html(data);
+		runCSS();
+	});
+	}else{
+		removeSuggestions();
+	}
+}
+
+function removeSuggestions() {
+	$("#suggestions").html("");
+	stopCSS();	
+}
+
+function addText(value) {
+	$("#userA").val(value);	
+}
+
+function runCSS() {
+	$("#suggestions").css({
+		'border' : 'solid',
+		'border-width' : '1px'
+	});
+}
+
+function stopCSS() {
+	$("#suggestions").css({
+		'border' : '',
+		'border-width' : ''
+	});
+}
+
+
+
+</script>
+
+<style type="text/css">
+#content {
+	margin-top: 60px;
+	width: 360px;	
+}
+
+input#userA {
+	width: 355px;	
+}
+
+#suggestions {
+	text-align: left;
+	padding-left: 3px;	
+}
+
+#link:hover {
+	background-color: #f0f0f0;
+	cursor: default;	
+}
+</style>
+
+</head>
+
+<body>
+<center>
+<div id="content">
+<h2>Sök efter Användare</h2><br />
+<input type="text" name="userA" id="userA" onblur="setTimeout('removeSuggestions()', 200)" onkeyup="getSuggestions(this.value);" />
+<div id="suggestions"></div>
+</div>
+</center>
+
     	<div class="content">
